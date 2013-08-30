@@ -32,7 +32,6 @@ OptionParser.new do |opts|
 
   opts.on("-c", "--custom_reviews DIR", "include custom reviews from specified dir") do |dir|
     options['dir'] = dir
-    puts 'the dir is' + dir
   end
 
   opts.on("-d", "--debug", "Debug mode") do
