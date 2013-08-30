@@ -31,6 +31,10 @@ module RailsBestPractices
       @options = options
       @options["exclude"] ||= []
       @options["only"] ||= []
+
+      if @options.has_key?('dir')
+        require_all @options['dir']
+      end
     end
 
     # generate configuration yaml file.

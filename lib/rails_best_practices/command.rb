@@ -2,6 +2,7 @@
 require 'optparse'
 
 # Usage: rails_best_practices [options] path
+#    -c, --custom_reviews DIR         include custom reviews from specified dir
 #    -d, --debug                      debug mode
 #        --silent                     silent mode
 #    -f, --format FORMAT              output format
@@ -28,6 +29,11 @@ require 'optparse'
 options = {}
 OptionParser.new do |opts|
   opts.banner = "Usage: rails_best_practices [options] path"
+
+  opts.on("-c", "--custom_reviews DIR", "include custom reviews from specified dir") do |dir|
+    options['dir'] = dir
+    puts 'the dir is' + dir
+  end
 
   opts.on("-d", "--debug", "Debug mode") do
     options['debug'] = true

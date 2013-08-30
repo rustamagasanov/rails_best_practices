@@ -9,6 +9,12 @@ module RailsBestPractices
       it 'should expand a relative path to an absolute' do
         subject.path.should eq File.expand_path('.')
       end
+
+      it 'should require custom directories if dir specified' do
+        analyzer = Analyzer.allocate
+        analyzer.should_receive(:require_all).with('my_dir')
+        analyzer.send(:initialize, '.', { 'dir' => 'my_dir' })
+      end
     end
 
     describe "expand_dirs_to_files" do
