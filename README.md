@@ -44,6 +44,7 @@ By default rails_best_practices will do parse codes in vendor, spec, test and fe
 
     $ rails_best_practices -h
     Usage: rails_best_practices [options]
+        -c, --custom_reviews DIR         include custom reviews from specified dir
         -d, --debug                      Debug mode
         -f, --format FORMAT              output format
             --without-color              only output plain text without color
